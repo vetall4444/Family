@@ -36,7 +36,7 @@ const timeBlock = document.querySelector('.TimeOver');
 const hours = timeBlock.querySelector('#Hours p');
 const minutes = timeBlock.querySelector('#Minutes p');
 const seconds = timeBlock.querySelector('#Seconds p');
-const deadLine = new Date('2021', '06', "30", "12", '56', '48');
+const deadLine = new Date('2021', '06', "31", "12", '56', '48');
 const calcTime = function (overTime) {
     const current = new Date();
     const fullTime = overTime - current;
@@ -92,7 +92,7 @@ modal.addEventListener('click', e => {
 
 //ТАбы и обработка нажатия
 const tabss = document.querySelectorAll('.Tab');
-const img = document.querySelectorAll('.FamilyIMG')
+const img = document.querySelectorAll('.FamilyIMG');
 
 function hideTabContent(imgs) {
     imgs.forEach(image => {
