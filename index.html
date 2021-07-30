@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style/reset.css" />
+  <link rel="stylesheet" href="style/style.css" />
+  <title>Моя семья</title>
+</head>
+
+<body>
+  <div class="Header">
+    <div class="Header-content">
+      <div class="Icon">
+        <p><img src="img/icon.png" alt="icon" /></p>
+      </div>
+      <ul class="Tabs-header">
+        <li class="Tab-header"><a href="#moor">Мур</a></li>
+        <li class="Tab-header"><a href="#meow">Привет</a></li>
+        <li class="Tab-header" id='Modal'><a href="">Пока</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="Wrapper">
+    <div class="FamilyBlock">
+      <div class="Family">
+        <div class="ChangeIMG">
+          <div class="FamilyIMG"><img src="img/cat.JPG" alt="cat" /></div>
+          <div class="FamilyIMG hide"><img src="img/dad.JPG" alt="dad" /></div>
+          <div class="FamilyIMG hide"><img src="img/mom.JPG" alt="mom" /></div>
+        </div>
+        <div class="TabsPanel">
+          <div class="Tab">
+            <p>Китося</p>
+          </div>
+          <div class="Tab">
+            <p>Папа</p>
+          </div>
+          <div class="Tab">
+            <p>Мама</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Food" id="moor">
+      <div class="FavoriteEat">
+        <h2>Любимые блюда</h2>
+      </div>
+      <div class="FoodCards">
+        <div class="FoodCard">
+          <img src="img/spagetti.JPG" alt="spagetti" />
+          <div class="FoodText">
+            <h3>Спагетти</h3>
+            <p>
+              Итальянское название длинной прямой вермишели, нитевидных
+              макаронных изделий длиной до 50-75 см и диаметром около 2 мм.
+              Родиной спагетти является Италия, и они широко используются в
+              итальянской кухне, часто подаются с томатным соусом.
+            </p>
+          </div>
+        </div>
+        <div class="FoodCard">
+          <img src="img/beer.JPG" alt="beer" />
+          <div class="FoodText">
+            <h3>Пиво</h3>
+            <p>
+              Слабоалкогольный напиток, получаемый спиртовым брожением
+              солодового сусла (чаще всего на основе ячменя) с помощью пивных
+              дрожжей, обычно с добавлением хмеля.
+            </p>
+          </div>
+        </div>
+        <div class="FoodCard">
+          <img src="img/rolls.JPG" alt="rolls" />
+          <div class="FoodText">
+            <h3>Роллы</h3>
+            <p>
+              Одна из разновидностей суши в японской кухне, отличительной
+              особенностью которой является скручивание при помощи бамбуковой
+              циновки в цилиндрическую форму, с последующим разрезанием на
+              дольки.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="FormFamily" id="meow">
+      <div class="FavoriteEat">
+        <h2>Хочу быть частью вашей семьи</h2>
+      </div>
+      <form class="FormContent">
+        <div class="Content">
+          <p>Введите ФИО</p>
+          <input type="text" name="FIO" id="FIO" />
+        </div>
+        <div class="Content">
+          <p>Введите e-mail</p>
+          <input type="email" name="e-mail" id="e-mail" />
+        </div>
+        <div class="Content">
+          <button type="submit">Стать частью семьи</button>
+        </div>
+      </form>
+    </div>
+    <div class="BlockTimer" id="end">
+      <div class="TimeOver">
+        <div id="Hours" class="Time">
+          <p>02</p>
+        </div>
+        <p>Часа</p>
+        <div id="Minutes" class="Time">
+          <p>29</p>
+        </div>
+        <p>Минут</p>
+        <div id="Seconds" class="Time">
+          <p>58</p>
+        </div>
+        <p>Секунд</p>
+      </div>
+      <div class="FavoriteEat">
+        <h2>Осталось до новой порции вкусняшек</h2>
+      </div>
+    </div>
+    <div class=" hide ModalForm ">
+      <div class="color">
+        <h3>Форма связи</h3>
+        <form>
+          <div class="ModalContent">
+            <p>Введите ФИО</p>
+            <input type="text" name="FIOModal" id="FIOModal" />
+          </div>
+          <div class="ModalContent">
+            <p>Введите e-mail</p>
+            <input type="email" name="e-mailModal" id="e-mailModal" />
+          </div>
+          <div class="ModalContent">
+            <button type="submit">Отправить заявку</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
