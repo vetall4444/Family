@@ -106,6 +106,10 @@
 }
 
 .FoodCards {
+  justify-content: center;
+}
+
+.FoodCards-inner {
   display: flex;
   justify-content: center;
 }
@@ -122,7 +126,8 @@
   background-color: peachpuff;
   border-radius: 8px;
   padding: 12px;
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .FoodCard img {
@@ -211,6 +216,23 @@
 .ModalContent {
   margin-top: 2em;
 }
-.color{
-  background-color:blanchedalmond;
+
+.color {
+  background-color: blanchedalmond;
+}
+
+.wrap {
+  justify-content: center;
+  display: flex;
+}
+
+.Arrow{
+  margin: auto;
+}
+.Arrow img {
+  width: 100px;
+}
+
+.right img {
+  transform: scale(-1, 1);
 }
