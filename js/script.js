@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
         render() {
             return (
                 `<div class="FoodCard">
-                    <img src="${this.img}" alt="${this.name}}" />
+                    <img src="${this.img}" alt="${this.name}" />
                         <div class="FoodText">
                             <h3>${this.title}</h3>
                             <p>
