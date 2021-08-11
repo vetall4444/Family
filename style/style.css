@@ -226,13 +226,70 @@
   display: flex;
 }
 
-.Arrow{
+.Arrow {
   margin: auto;
 }
+
 .Arrow img {
   width: 100px;
 }
 
 .right img {
   transform: scale(-1, 1);
+}
+
+#gender h3 {
+  text-align: center;
+  font-size: 2em;
+}
+
+.chooseGender {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
+}
+
+.sex {
+  border: 1px solid black;
+  padding: 1em;
+  background-color: wheat;
+  border-radius: 5%;
+  margin: 0.5em;
+}
+
+.active {
+  background-color: rgb(159, 221, 159);
+}
+
+.FavoriteEat_meow {
+  padding-bottom: 0.4em;
+}
+
+.MeowData form {
+  display: flex;
+  justify-content: center;
+}
+
+.MeowData {
+  margin-top: 1.5em;
+
+}
+
+.inputData {
+  margin: 0.5em;
+}
+
+.inputData input {
+  width: 15em;
+  height: 3em;
+}
+.alcoLevel{
+  margin-top: 1em;
+}
+.resultMeow{
+  font-size: 5em;
+  padding: 0.5em;
+}
+.sex:hover{
+  cursor: pointer;
 }

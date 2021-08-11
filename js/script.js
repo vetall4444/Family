@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const hours = timeBlock.querySelector('#Hours p');
     const minutes = timeBlock.querySelector('#Minutes p');
     const seconds = timeBlock.querySelector('#Seconds p');
-    const deadLine = new Date('2021', '07', "10", "12", '56', '48');
+    const deadLine = new Date('2021', '07', "12", "12", '56', '48');
     const calcTime = function (overTime) {
         const current = new Date();
         const fullTime = overTime - current;
@@ -159,7 +159,6 @@ window.addEventListener('DOMContentLoaded', () => {
         const c = await fetch('http://localhost:3000/menu');
         return await c.json();
     }
-
     async function showCards() {
         await getCards()
             .then(data => data.forEach(({
@@ -171,7 +170,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 FoodCards.innerHTML += new CardFood(altimg, img, title, descr).render();
             }));
     }
-    let position = 0;
+    let position = 434;
     async function wait() {
         await showCards();
         const oneCard = document.querySelectorAll('.FoodCard');
@@ -182,17 +181,15 @@ window.addEventListener('DOMContentLoaded', () => {
         FoodCards.style.width = width * countCard - 3 + "px";
         const left = document.querySelector('.Arrow.left');
         const right = document.querySelector('.Arrow.right');
-        left.addEventListener('click', e => {
-            if (position > width * (countCard - 3)-1)
+        right.addEventListener('click', e => {
+            if (position > width * (countCard - 3) - 1)
                 position = 0;
             else
                 position += width;
             FoodCards.style.transform = `translateX(-${position}px)`;
             console.log(position);
-
-
         });
-        right.addEventListener('click', e => {
+        left.addEventListener('click', e => {
             if (position < 1)
                 position = width * (countCard - 3);
             else
@@ -200,8 +197,72 @@ window.addEventListener('DOMContentLoaded', () => {
             console.log(position);
             FoodCards.style.transform = `translateX(-${position}px)`;
         });
-
     }
     wait();
+    let sex = 'male',
+        beer,
+        weight,
+        height,
+        koef=1.5;
+
+    function calcMoor() {
+        const res = document.querySelector('#result');
+        if (sex && beer && weight && height && koef) {
+            if (sex === 'male')
+                res.textContent = Math.round((3 * beer) + (0.6 * weight) + (0.8 * height) * koef);
+            else if (sex === 'female') {
+                res.textContent = Math.round((5 * beer) + (0.6 * weight) + (0.9 * height) * koef);
+            }
+        }
+        else{
+            res.textContent = '___';
+        }
+    }
+
+    function getStaticData(parent) {
+        const elements = document.querySelectorAll(`${parent} div`);
+        elements.forEach(element => element.addEventListener('click', e => {
+            for (let i = 0; i < elements.length; i++) {
+                if (elements[i] === e.target) {
+                    e.target.classList.add('active');
+                    if (e.target.getAttribute('id'))
+                        sex = e.target.getAttribute('id');
+                    else if (e.target.getAttribute('data-alco')) {
+                        koef = +e.target.getAttribute('data-alco');
+                    }
+                } else
+                    elements[i].classList.remove('active');
+            }
+            calcMoor();
+        }));
+    }
+
+    function getDynamicData(selector) {
+        const input = document.querySelector(selector);
+        input.addEventListener('input', e => {
+            if (input.value.match(/\D/))
+                input.style.border = '3px solid red';
+            else {
+                input.style.border = 'none';
+            }
+            if (e.target.getAttribute('name') === 'beer') {
+                beer = input.value;
+                calcMoor();
+            } else if (e.target.getAttribute('name') === 'weight') {
+                weight = input.value;
+                calcMoor();
+            } else if (e.target.getAttribute('name') === 'height') {
+                height = input.value;
+                calcMoor();
+            }
+        });
+    }
+    calcMoor();
+    getStaticData('.alcoLevel.chooseGender');
+    getStaticData('.sexGender.chooseGender');
+    getDynamicData('#pivo');
+    getDynamicData('#rost');
+    getDynamicData('#ves');
+
 
 });
