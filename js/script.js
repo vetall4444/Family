@@ -116,7 +116,7 @@ window.addEventListener('DOMContentLoaded', () => {
             },
             body: JSON.stringify(Object.fromEntries(formData.entries()))
         })
-        return await res.json();
+        return  res.json();
     }
     async function bindPostData(initForm) {
         initForm.addEventListener('submit', e => {
@@ -128,7 +128,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     async function getCards() {
         const c = await fetch('http://localhost:3000/menu');
-        return await c.json();
+        return  c.json();
     }
     async function showCards() {
         await getCards()
