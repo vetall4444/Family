@@ -149,7 +149,6 @@ window.addEventListener('DOMContentLoaded', () => {
     async function bindPostData(initForm) {
         initForm.addEventListener('submit', e => {
             e.preventDefault();
-            console.log(postData(initForm));
             initForm.reset();
         });
     }
@@ -187,14 +186,12 @@ window.addEventListener('DOMContentLoaded', () => {
             else
                 position += width;
             FoodCards.style.transform = `translateX(-${position}px)`;
-            console.log(position);
         });
         left.addEventListener('click', e => {
             if (position < 1)
                 position = width * (countCard - 3);
             else
                 position -= width;
-            console.log(position);
             FoodCards.style.transform = `translateX(-${position}px)`;
         });
     }
