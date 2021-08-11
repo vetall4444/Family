@@ -203,7 +203,7 @@ window.addEventListener('DOMContentLoaded', () => {
         beer,
         weight,
         height,
-        koef=1.5;
+        koef = 1.5;
 
     function calcMoor() {
         const res = document.querySelector('#result');
@@ -213,8 +213,7 @@ window.addEventListener('DOMContentLoaded', () => {
             else if (sex === 'female') {
                 res.textContent = Math.round((5 * beer) + (0.6 * weight) + (0.9 * height) * koef);
             }
-        }
-        else{
+        } else {
             res.textContent = '___';
         }
     }
@@ -240,9 +239,10 @@ window.addEventListener('DOMContentLoaded', () => {
     function getDynamicData(selector) {
         const input = document.querySelector(selector);
         input.addEventListener('input', e => {
-            if (input.value.match(/\D/))
+            if (input.value.match(/\D/)) {
                 input.style.border = '3px solid red';
-            else {
+                return;
+            } else {
                 input.style.border = 'none';
             }
             if (e.target.getAttribute('name') === 'beer') {
