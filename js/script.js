@@ -27,13 +27,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     FoodCards.innerHTML = '';
-    //const first = new CardFood('spagetti', 'img/spagetti.JPG', 'Спагетти', 'Итальянское название длинной прямой вермишели, нитевидных макаронных изделий длиной до 50-75 см и диаметром около 2 мм. Родиной спагетти является Италия, и они широко используются витальянской кухне, часто подаются с томатным соусом.');
-    //const second = new CardFood('beer', 'img/beer.JPG', 'Пиво', 'Слабоалкогольный напиток, получаемый спиртовым брожением солодового сусла (чаще всего на основе ячменя) с помощью пивных дрожжей, обычно с добавлением хмеля.');
-    //const third = new CardFood('rolls', 'img/rolls.JPG', 'Роллы', 'Одна из разновидностей суши в японской кухне, отличительной особенностью которой является скручивание при помощи бамбуковой циновки в цилиндрическую форму, с последующим разрезанием на дольки.');
-    //FoodCards.innerHTML += first.render();
-    //FoodCards.innerHTML += second.render();
-    //FoodCards.innerHTML += third.render();
-
     //Timer
     const timeBlock = document.querySelector('.TimeOver');
     const hours = timeBlock.querySelector('#Hours p');
@@ -114,27 +107,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     selectTab(tabss);
 
-    /* function postData(initForm) {
-        initForm.addEventListener('submit', e => {
-            e.preventDefault();
-            const request = new XMLHttpRequest();
-            request.open('POST', 'server.php');
-            request.setRequestHeader('Content-Type', 'application/json');
-            const formData = new FormData(initForm);
-            const obj = {};
-            formData.forEach(function (value, key) {
-                obj[key] = value;
-            });
-            const json = JSON.stringify(obj);
-            request.send(json);
-            request.addEventListener('load', e => {
-                if (request.status === 200) {
-                    console.log(request.response);
-                } else {}
-                initForm.reset();
-            });
-        });
-    } */
     async function postData(initForm) {
         const formData = new FormData(initForm);
         const res = await fetch('http://localhost:3000/requests', {
